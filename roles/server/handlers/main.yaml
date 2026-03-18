@@ -1,0 +1,8 @@
+---
+- name: Restart server
+  reboot:
+
+- name: Wait for server to restart
+  wait_for_connection:
+    delay: 10
+    timeout: 60

@@ -1,0 +1,16 @@
+- name: Create WordPress database
+  mysql_db:
+    name: wordpress_db
+    state: present
+    login_user: root
+    login_password: rootpass123
+
+- name: Create WordPress user
+  mysql_user:
+    name: wp_user
+    password: wp_password
+    priv: "wordpress_db.*:ALL"
+    host: localhost
+    state: present
+    login_user: root
+    login_password: rootpass123

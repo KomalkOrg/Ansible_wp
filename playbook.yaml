@@ -1,0 +1,11 @@
+---
+- name: Setup WordPress using separate roles
+  hosts: web
+  become: yes
+
+  roles:
+    - server
+    - nginx
+    - php
+    - mysql
+    - wordpress
